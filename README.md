@@ -50,7 +50,7 @@ endmodule
 ```
 
 # RTL LOGIC FOR UP COUNTER
-![up jpg](https://github.com/Kavi45-msk/Exp-7-Synchornous-counters-/assets/147457752/b4aaa84c-fd6a-4a29-b85d-32306f1f8044)
+![up](https://github.com/Kavi45-msk/Exp-7-Synchornous-counters-/assets/147457752/42e688c9-0f09-4855-aa94-999ef57fbd7c)
 
 
 # TRUTH TABLE
