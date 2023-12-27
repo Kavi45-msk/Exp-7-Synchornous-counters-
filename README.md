@@ -37,27 +37,29 @@ Four-bit “Up” Counter
 
 # PROGRAM
 ```
-module uc(clk, A);
+module up_counter(clk,q1,q2,q3);
 input clk;
-output reg [2:0]A;
-always @(posedge clk)
+output reg q1,q2,q3;
+always@(posedge clk)
 begin
-A[2]=(((A[0])&(A[1]))^A[2]);
-A[1]=(A[0])^A[1];
-A[0]=A[0]^1;
-end
+q3=(q1&q2)^q3;
+q2=q1^q2;
+q1=1^q1;
+end 
 endmodule
 ```
 
 # RTL LOGIC FOR UP COUNTER
+![up jpg](https://github.com/Kavi45-msk/Exp-7-Synchornous-counters-/assets/147457752/b4aaa84c-fd6a-4a29-b85d-32306f1f8044)
 
-![292272771-496bb623-d669-4a79-99e4-5341616678cc](https://github.com/Kavi45-msk/Exp-7-Synchornous-counters-/assets/147457752/562108ae-6457-4d5e-9a10-1ba50269e12f)
 
 # TRUTH TABLE
-![292272854-4c0d7e64-63b8-470f-a5fd-6fd98807cbee](https://github.com/Kavi45-msk/Exp-7-Synchornous-counters-/assets/147457752/5843d2dd-ab8c-47e9-a752-52be3e656e81)
+![Screenshot 2023-12-27 202548](https://github.com/Kavi45-msk/Exp-7-Synchornous-counters-/assets/147457752/61101a6c-3bc6-4673-8f28-a6cc96261e20)
+
 
 # TIMING DIAGRAM FOR UP COUNTER
-![292272952-66671293-cfc2-4f8d-8fe3-ce8daed9eeeb](https://github.com/Kavi45-msk/Exp-7-Synchornous-counters-/assets/147457752/cda3ebc3-e182-47bb-aa52-b06b0e112857)
+![time](https://github.com/Kavi45-msk/Exp-7-Synchornous-counters-/assets/147457752/503e5497-1348-4cfe-8cb9-f85522c71464)
+
 
 ## DOWN COUNTER 
 As well as counting “up” from zero and increasing or incrementing to some preset value, it is sometimes necessary to count “down” from a predetermined value to zero allowing us to produce an output that activates when the zero count or some other pre-set value is reached.
@@ -67,27 +69,27 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 # PROGRAM 
 ```
-module dc(clk,A);
+module COUNTER(clk,q1,q2,q3);
 input clk;
-output reg [2:0]A;
-always @(posedge clk)
+output reg q1,q2,q3;
+always@(posedge clk)
 begin
-A[2]=(((~A[0])&(~A[1]))^A[2]);
-A[1]=(~A[0])^A[1];
-A[0]=1^A[0];
+q3=((~q2)&(~q1))^q3;
+q2=(~q1)^q2;
+q1=1^q1;
 end
-endmodule 
+endmodule
 ```
 
 # RTL LOGIC DOWN COUNTER  
-![292273158-4f806ce8-8ad7-4e2b-a7f2-552e41d7b967](https://github.com/Kavi45-msk/Exp-7-Synchornous-counters-/assets/147457752/6f5f423d-d4c7-423d-80c3-c62a7bbbf439)
+![down](https://github.com/Kavi45-msk/Exp-7-Synchornous-counters-/assets/147457752/86302d1a-9941-44f5-b0c5-b4a4d197801c)
 
 # TRUTH TABLE 
-![292273123-85fc4456-147c-483b-af07-c9fc684dc021](https://github.com/Kavi45-msk/Exp-7-Synchornous-counters-/assets/147457752/7c22c226-8184-4139-88e1-1b4e098379f3)
+![Screenshot 2023-12-27 202534](https://github.com/Kavi45-msk/Exp-7-Synchornous-counters-/assets/147457752/f1f16bd2-e699-431f-b573-37a9d7058932)
+
 
 # TIMING DIAGRAM FOR DOWN COUNTER
-
-![292273088-a9eb3ee3-1e47-4f8b-9abe-186fa4e7a088](https://github.com/Kavi45-msk/Exp-7-Synchornous-counters-/assets/147457752/8f07cdb5-c2bb-452f-b111-3b528e167b7b)
+![Screenshot 2023-12-27 140354](https://github.com/Kavi45-msk/Exp-7-Synchornous-counters-/assets/147457752/2eebdbcf-f101-471e-a1b2-24a7d524a12f)
 
 # RESULT
 Thus synchornous counters up counter and down counter circuit are studied and the truth table for different logic gates are verified.
